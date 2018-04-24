@@ -1,0 +1,12 @@
+LookupRequest:
+  type: "object"
+  required:
+    - systemName
+    - systemUniqueId
+  properties:
+    systemName:
+      type: "string"
+      maxLength: 60
+    systemUniqueId:
+      type: "string"
+      maxLength: 100

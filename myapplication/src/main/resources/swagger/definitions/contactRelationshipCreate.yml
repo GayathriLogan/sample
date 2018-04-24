@@ -1,0 +1,48 @@
+ContactRelationshipCreate:
+      type: "object"
+      required:
+          -sourceSystemName
+          -sourceSystemUniqueID
+          -mdmPersonID
+          -ContactRelationship
+      properties:
+            sourceSystemName:
+                type: "string"
+                maxLength: 60
+                
+            sourceSystemUniqueID:
+                type: "string"
+                maxLength: 100
+                
+            mdmPersonID:
+                type: "string"
+                maxLength: 14
+                
+            ContactRelationship:
+                $ref: '#/definitions/RequestContactRelationshipService'
+                             
+definitions:
+           
+ RequestContactRelationshipService:
+    
+     type: "array"
+     items:
+       type: "object"
+       properties:
+            contactRelationshipProcessCode:
+                type: "string"
+                maxLength: 20
+            contactRelationshipRoleCode:
+                type: "string"
+                maxLength: 20
+            contactRelationshipStatus:
+                type: "string"
+                maxLength: 8
+                enum:
+                   - "Active"
+                   - "Inactive"
+                default: "Active"                 
+      
+                
+                  
+           

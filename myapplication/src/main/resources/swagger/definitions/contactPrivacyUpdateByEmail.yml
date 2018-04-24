@@ -1,0 +1,54 @@
+ContactPrivacyUpdateByEmail:
+      type: "object"
+      required:
+          -systemName
+          -emailAddress
+          -emailPrivacyCollectionTimestamp
+      properties:
+           systemName:
+              type: "string"
+              maxLength: 60
+                
+           emailAddress:
+              type: "string"
+              maxLength: 200
+              
+           emailPrivacyCollectionTimestamp:
+              type: "string" 
+              format: "date-time"              
+                
+           GDPRField:
+              $ref: '#/definitions/GDPRFields'
+  
+definitions:
+
+  GDPRFields:
+     type: "object"
+     properties:
+        OptInSource:
+            type: "string"
+            maxLength: 100
+            
+        OptInMethod:
+            type: "string"
+            maxLength: 20
+            
+        OptInAnnotation:
+            type: "string"
+            maxLength: 2048
+        
+        OptInSupporting URL:
+            type: "string"
+            maxLength: 2048
+            
+        OptInForm URL:
+            type: "string"
+            maxLength: 2048
+            
+        OptInForm Name:
+            type: "string"
+            maxLength: 50
+            
+        OptInIP Address:
+            type: "string"
+            maxLength: 50

@@ -1,0 +1,46 @@
+ContactPrivacyUpdateByTelephone:
+      type: "object"
+      required:
+          -systemName
+          -telephoneCountryCode
+          -telephoneNumber
+          -telephonePrivacyCollectionTimestamp
+      properties:
+           systemName:
+              type: "string"
+              maxLength: 60
+                
+           telephoneCountryCode:
+              type: "string"
+              maxLength: 2
+                
+           telephoneNumber:
+              type: "string"
+              maxLength: 20
+              
+           telephonePrivacyCollectionTimestamp:
+              type: "string"
+              format: "date-time"
+                
+           setAllTelephonePrivacy:
+              type: "string"
+              maxLength: 1
+              default: "N"
+            
+           setTelephonePrivacy:
+              type: "string"
+              maxLength: 1
+              default: "N"
+                
+           setMobilePrivacy:
+              type: "string"
+              maxLength: 1
+              default: "N"
+                
+           setFaxPrivacy:
+              type: "string"
+              maxLength: 1
+              default: "N"
+           
+           GDPRField:
+              $ref: './contactPrivacyUpdateByEmail.yml#/definitions/GDPRFields'   

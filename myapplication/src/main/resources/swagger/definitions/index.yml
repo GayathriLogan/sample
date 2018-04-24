@@ -1,0 +1,661 @@
+Request:
+  type: 'object'
+  required:
+    - Person
+  properties:
+     Person:
+       $ref: '#/definitions/RequestPerson'
+
+
+Response:
+  type: 'object'
+  properties:
+      Person:
+        $ref: '#/definitions/ResponsePerson'
+
+definitions:
+
+  ResponsePrivacyIsolation:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+          sourceCode:
+            type: "string"
+          reason:
+            type: "string"
+          statusCode:
+            type: "string"
+          comment:
+            type: "string"
+          timestamp:
+            type: "string"
+            format: "date-time"
+
+  ResponsePrivacyContactMedium:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+          typeCode:
+            type: "string"
+          preferenceCode:
+            type: "string"
+          collectionTimestamp:
+            type: "string"
+            format: "date-time"
+          sourceCode:
+            type: "string"
+
+  ResponseDemographicAssignment:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+          code:
+            type: "string"
+          statusCode:
+            type: "string"
+          sourceCode:
+            type: "string"
+          typeCode:
+            type: "string"
+          name:
+            type: "string"
+          effectiveDate:
+            type: "string"
+            format: "date-time"
+          expiryDate:
+            type: "string"
+            format: "date-time"
+          value:
+            type: "string"
+          DemographicAssignmentRankItems:
+            type: "array"
+            items:
+                  type: "object"
+                  properties:
+                      demographicRankItem:
+                        type: "string"
+                      demographicRankOrdinalNumber:
+                        type: "string"
+          DemographicAssignmentListItems:
+            type: "array"
+            items:
+                  type: "object"
+                  properties:
+                      demographicListItem:
+                        type: "string"
+
+  ResponseAssociationSite:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+          companySiteID:
+            type: "string"
+          verificationStatus:
+            type: "string"
+          contactAssociationRoleCode:
+            type: "string"
+          effectiveTimestamp:
+            type: "string"
+            format: "date-time"
+          expiryTimestamp:
+            type: "string"
+            format: "date-time"
+
+  ResponseAssociationOrganization:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+          companyOrganizationID:
+            type: "string"
+          verificationStatus:
+            type: "string"
+          contactAssociationRoleCode:
+            type: "string"
+          effectiveTimestamp:
+            type: "string"
+            format: "date-time"
+          expiryTimestamp:
+            type: "string"
+            format: "date-time"
+
+  ResponseAssociationOpsi:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+          companyOpsiID:
+            type: "string"
+          verificationStatus:
+            type: "string"
+          contactAssociationRoleCode:
+            type: "string"
+          effectiveTimestamp:
+            type: "string"
+            format: "date-time"
+          expiryTimestamp:
+            type: "string"
+            format: "date-time"
+
+  ResponseUri:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+          roleCode:
+            type: "string"
+          schemaCode:
+            type: "string"
+          specificPart:
+            type: "string"
+
+  ResponseTelephone:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+          roleCode:
+            type: "string"
+          number:
+            type: "string"
+          extensionNumber:
+            type: "string"
+          countryCode:
+            type: "string"
+          cityCode:
+            type: "string"
+          countryAccessCode:
+            type: "string"
+          smartIndicator:
+            type: "string"
+
+  ResponseSocialMedia:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+          typeCode:
+            type: "string"
+          handleName:
+            type: "string"
+          urlText:
+            type: "string"
+          uriSchemaCode:
+            type: "string"
+
+  ResponseQualificationSuffix:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+          qualificationSuffixName:
+            type: "string"
+          qualificationSuffixOrdinalNumber:
+            type: "string"
+
+  ResponsePerson:
+    type: "object"
+    properties:
+      mdmContactID:
+        type: "string"
+      preferredCountryCode:
+        type: "string"
+      preferredLanguageCode:
+        type: "string"
+      preferredLanguageCharacterScript:
+        type: "string"
+      familyName:
+        type: "string"
+      firstGivenName:
+        type: "string"
+      secondGivenName:
+        type: "string"
+      salutationPrefix:
+        type: "string"
+      generationSuffix:
+        type: "string"
+      gender:
+        type: "string"
+      nicknameFamilyName:
+        type: "string"
+      nicknameFirstGivenName:
+        type: "string"
+      nicknameSecondGivenName:
+        type: "string"
+      phoneticFamilyName:
+        type: "string"
+      phoneticFirstGivenName:
+        type: "string"
+      phoneticSecondGivenName:
+        type: "string"
+      localFamilyName:
+        type: "string"
+      localFirsGiventName:
+        type: "string"
+      localSecondGivenName:
+        type: "string"
+      AssociationDuns:
+        $ref: '#/definitions/ResponseAssociationDuns'
+      AssociationParty:
+        $ref: '#/definitions/ResponseAssociationParty'
+      Email:
+        $ref: '#/definitions/ResponseEmail'
+      Telephone:
+        $ref: '#/definitions/ResponseTelephone'
+      Address:
+        $ref: '#/definitions/ResponseAddress'
+      AssociationOrganization:
+        $ref: '#/definitions/ResponseAssociationOrganization'
+      AssociationSite:
+        $ref: '#/definitions/ResponseAssociationSite'
+      AssociationOpsi:
+        $ref: '#/definitions/ResponseAssociationOpsi'
+      QualificationSuffix:
+        $ref: '#/definitions/ResponseQualificationSuffix'
+      ContactRelationship:
+        $ref: '#/definitions/ResponseContactRelationship'
+      PrivacyContactMedium:
+        $ref: '#/definitions/ResponsePrivacyContactMedium'
+      PrivacyIsolation:
+        $ref: '#/definitions/ResponsePrivacyIsolation'
+      Uri:
+        $ref: '#/definitions/ResponseUri'
+      SocialMedia:
+        $ref: '#/definitions/ResponseSocialMedia'
+      DemographicAssignment:
+        $ref: '#/definitions/ResponseDemographicAssignment'
+
+
+  ResponseAssociationDuns:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+          companyDunsID:
+            type: "string"
+            maxLength: 50
+          verificationStatus:
+            type: "string"
+            maxLength: 20
+          contactAssociationRoleCode:
+            type: "string"
+            maxLength: 20
+          effectiveTimestamp:
+            type: "string"
+            format: "date-time"
+          expiryTimestamp:
+            type: "string"
+            format: "date-time"
+          companyOrganizationID:
+            type: "string"
+            maxLength: 14
+
+  ResponseAssociationParty:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+          partyID:
+            type: "string"
+            maxLength: 50
+          verificationStatus:
+            type: "string"
+            maxLength: 20
+          contactAssociationRoleCode:
+            type: "string"
+            maxLength: 20
+          effectiveTimestamp:
+            type: "string"
+            format: "date-time"
+          expiryTimestamp:
+            type: "string"
+            format: "date-time"
+          companyOrganizationID:
+            type: "string"
+            maxLength: 14
+
+  ResponseEmail:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+          emailRoleCode:
+            type: "string"
+          emailAddress:
+            type: "string"
+          emailDomain:
+            type: "string"
+          emailDescription:
+            type: "string"
+
+  ResponseContactRelationship:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+          contactRelationshipProcessCode:
+            type: "string"
+          contactRelationshipRoleCode:
+            type: "string"
+
+  ResponseAddress:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+          companyName:
+            type: "string"
+          line1:
+            type: "string"
+          line2:
+            type: "string"
+          line3:
+            type: "string"
+          cityName:
+            type: "string"
+          cityDistrict:
+            type: "string"
+          typeCode:
+            type: "string"
+          stateProvinceName:
+            type: "string"
+          postalCode:
+            type: "string"
+          postalCodeExtension:
+            type: "string"
+          countryCode:
+            type: "string"
+          languageCountryCode:
+            type: "string"
+          languageCode:
+            type: "string"
+          languageCharacterScript:
+            type: "string"
+          roleCode:
+            type: "string"
+
+
+## REQUEST OBJECT MODEL
+
+  RequestPerson:
+    type: "object"
+    required:
+      - systemName
+      - systemUniqueID
+      - collectionSystemName
+      - familyName
+      - countryCode
+      - ContactRelationship
+    properties:
+      systemName:
+        type: "string"
+        maxLength: 60
+      systemUniqueID:
+        type: "string"
+        maxLength: 100
+      collectionSystemName:
+        type: "string"
+        maxLength: 60
+      mdmContactID:
+        type: "string"
+        maxLength: 14
+      countryCode:
+        type: "string"
+        maxLength: 2
+      languageCode:
+        type: "string"
+        maxLength: 2
+      familyName:
+        type: "string"
+        maxLength: 50
+      firstName:
+        type: "string"
+        maxLength: 50
+      secondName:
+        type: "string"
+        maxLength: 50
+      salutationPrefix:
+        type: "string"
+        maxLength: 50
+      generationSuffix:
+        type: "string"
+        maxLength: 50
+      gender:
+        type: "string"
+        enum:
+          - "M"
+          - "F"
+      nicknameFamilyName:
+        type: "string"
+        maxLength: 50
+      nicknameFirstName:
+        type: "string"
+        maxLength: 50
+      nicknameSecondName:
+        type: "string"
+        maxLength: 50
+      phoneticFamilyName:
+        type: "string"
+        maxLength: 50
+      phoneticFirstName:
+        type: "string"
+        maxLength: 50
+      phoneticSecondName:
+        type: "string"
+        maxLength: 50
+      localFamilyName:
+        type: "string"
+        maxLength: 50
+      localFirstName:
+        type: "string"
+        maxLength: 50
+      localSecondName:
+        type: "string"
+        maxLength: 50
+      partyId:
+        type: "string"
+        maxLength: 20
+      companyDunsID:
+        type: "string"
+        maxLength: 20
+      companyOrganizationID:
+        type: "string"
+        maxLength: 14
+      companySiteID:
+        type: "string"
+        maxLength: 14
+      companyOpsiID:
+        type: "string"
+        maxLength: 14
+      businessEmailAddress:
+        type: "string"
+        maxLength: 200
+      businessTelephoneNumber:
+        type: "string"
+        maxLength: 200
+      businessTelephoneExtensionNumber:
+        type: "string"
+        maxLength: 200
+      businessTelephoneCountryCode:
+        type: "string"
+        maxLength: 2
+      businessTelephoneCityCode:
+        type: "string"
+        maxLength: 20
+      businessMobileNumber:
+        type: "string"
+        maxLength: 200
+      businessMobileCountryCode:
+        type: "string"
+        maxLength: 2
+      businessMobileCityCode:
+        type: "string"
+        maxLength: 20
+      businessFaxNumber:
+        type: "string"
+        maxLength: 200
+      businessFaxExtensionNumber:
+        type: "string"
+        maxLength: 20
+      businessFaxCountryCode:
+        type: "string"
+        maxLength: 2
+      businessFaxCityCode:
+        type: "string"
+        maxLength: 20
+      businessAddressCompanyName:
+        type: "string"
+        maxLength: 500
+      businessAddressLine1:
+        type: "string"
+        maxLength: 100
+      businessAddressLine2:
+        type: "string"
+        maxLength: 100
+      businessAddressLine3:
+        type: "string"
+        maxLength: 100
+      businessAddressCityName:
+        type: "string"
+        maxLength: 100
+      businessAddressCityDistrict:
+        type: "string"
+        maxLength: 100
+      businessAddressStateProvinceName:
+        type: "string"
+        maxLength: 100
+      businessAddressPostalCode:
+        type: "string"
+        maxLength: 10
+      businessAddressPostalCodeExtension:
+        type: "string"
+        maxLength: 50
+      businessAddressCountryCode:
+        type: "string"
+        maxLength: 50
+      multibyteInd:
+        type: "string"
+        enum:
+          - "N"
+          - "Y"
+        default: "N"
+      ContactRelationship:
+        $ref: '#/definitions/RequestContactRelationship'
+      PersonPrivacy:
+        $ref: '#/definitions/RequestPersonPrivacy'
+      PersonQualificationSuffix:
+        $ref: '#/definitions/RequestPersonQualificationSuffix'
+      PersonQualificationSuffixAssociation:
+        $ref: '#/definitions/RequestPersonQualificationSuffixAssociation'
+      PersonSocialMedia:
+        $ref: '#/definitions/RequestPersonSocialMedia'
+      PersonUri:
+        $ref: '#/definitions/RequestPersonUri'
+
+  RequestContactRelationship:
+    type: "array"
+    items:
+      type: "object"
+      required:
+        - processCode
+        - roleCode
+      properties:
+        processCode:
+          type: "string"
+          maxLength: 20
+        roleCode:
+          type: "string"
+          maxLength: 20
+        limitedUseInd:
+          type: "string"
+          maxLength: 1
+          default: "N"
+
+  RequestPersonPrivacy:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+        privacyTypeCode:
+          type: "string"
+          maxLength: 20
+        privacyPreferenceCode:
+          type: "string"
+          maxLength: 20
+        privacyCollectionTimestamp:
+          type: "string"
+          format: "date-time"
+
+  RequestPersonQualificationSuffix:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+        qualificationSuffixName:
+          type: "string"
+          maxLength: 20
+        qualificationSuffixOrdinalNumber:
+          type: "string"
+          maxLength: 20
+
+  RequestPersonQualificationSuffixAssociation:
+    type: "object"
+    properties:
+      lastUpdate:
+        type: "string"
+        format: "date-time"
+      personQualificationSuffixCode:
+        type: "string"
+        maxLength: 20
+      preferredCountryLanguageID:
+        type: "string"
+        maxLength: 20
+      preferredCountryCode:
+        type: "string"
+        maxLength: 20
+      preferredLanguageCode:
+        type: "string"
+        maxLength: 20
+      preferredCharacterScriptCode:
+        type: "string"
+        maxLength: 20
+      qualificationSuffixOrdinalNumber:
+        type: "string"
+        maxLength: 20
+      primary:
+        type: "string"
+        maxLength: 20
+
+  RequestPersonSocialMedia:
+    type: "array"
+    items:
+        type: "object"
+        properties:
+          socialMediaTypeCode:
+            type: "string"
+            maxLength: 20
+          socialMediaHandleName:
+            type: "string"
+            maxLength: 50
+          urlText:
+            type: "string"
+            maxLength: 100
+
+  RequestPersonUri:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+        uriRoleCode:
+          type: "string"
+          maxLength: 20
+        uriSchemaCode:
+          type: "string"
+          maxLength: 20
+        uriSpecificPart:
+          type: "string"
+          maxLength: 2048

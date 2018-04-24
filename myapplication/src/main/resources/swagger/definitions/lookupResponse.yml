@@ -1,0 +1,16 @@
+LookupResponse:
+    type: 'object'
+    properties:
+        ResponsePerson:
+            $ref: '.././definitions/index.yml#/definitions/ResponsePerson'
+
+LookupResponsePrivacyOnly:
+    type: 'object'
+    properties:
+        mdmContactId:
+            type: 'string'
+            maxLength: 14
+        PrivacyContactMedium:
+            $ref: '.././definitions/index.yml#/definitions/ResponsePrivacyContactMedium'
+        PrivacyIsolation:
+            $ref: '.././definitions/index.yml#/definitions/ResponsePrivacyIsolation'
